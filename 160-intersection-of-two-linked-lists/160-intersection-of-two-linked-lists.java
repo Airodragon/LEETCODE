@@ -44,6 +44,6 @@ public class Solution {
             headA=headA.next;
             headB=headB.next;
         }
-        return headB;
+        return headB; 
     }
 }
