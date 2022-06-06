@@ -12,7 +12,7 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode m = headA;
-        ArrayList ans = new ArrayList();
+        Set<ListNode> ans = new HashSet<ListNode>();
         while(m!=null){
             ans.add(m);
             m = m.next;
