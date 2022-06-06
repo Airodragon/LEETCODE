@@ -12,17 +12,17 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode m = headA;
-        ListNode n = headB;
         ArrayList ans = new ArrayList();
         while(m!=null){
             ans.add(m);
             m = m.next;
         }
-        while(n!=null){
-            if (ans.contains(n))
-                return n;
-                n = n.next;
-                }
+        m = headB;
+        while(m!=null){
+            if (ans.contains(m))
+                return m;
+                m = m.next;
+            }
         return null;
     }
 }
