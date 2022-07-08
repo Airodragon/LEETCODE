@@ -1,5 +1,5 @@
 class Solution {
-    public boolean checkTree(TreeNode root) {
-        return (root.left.val+root.right.val)==root.val;
+    public boolean checkTree(TreeNode r) {
+        return r.left.val+r.right.val==r.val;
     }
 }
