@@ -16,7 +16,7 @@
 class Solution {
     public int s = 0;
     public int rangeSumBST(TreeNode r, int l, int h) {
-        if (r==null) return 0;
+        if (r==null) return s;
         if ((l<=r.val) && (h>=r.val)) s+=r.val;
         rangeSumBST(r.left,l,h);
         rangeSumBST(r.right,l,h);
