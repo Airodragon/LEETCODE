@@ -14,12 +14,12 @@
  * }
  */
 class Solution {
-    public int sum = 0;
-    public int rangeSumBST(TreeNode root, int low, int high) {
-        if (root==null) return sum;
-        if ((low<=root.val) && (high>=root.val)) sum+=root.val;
-        rangeSumBST(root.left,low,high);
-        rangeSumBST(root.right,low,high);
-        return sum;
+    public int s = 0;
+    public int rangeSumBST(TreeNode r, int l, int h) {
+        if (r==null) return 0;
+        if ((l<=r.val) && (h>=r.val)) s+=r.val;
+        rangeSumBST(r.left,l,h);
+        rangeSumBST(r.right,l,h);
+        return s;
     }
 }
