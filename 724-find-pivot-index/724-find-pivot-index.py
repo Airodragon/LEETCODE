@@ -3,9 +3,7 @@ class Solution:
         pivot_idx = 0
         sum_ = 0
         curr = 0
-        while curr < len(nums):
-            sum_ += nums[curr]
-            curr += 1
+        sum_ = sum(nums)
         left_sum = 0
         right_sum = sum_
         for curr in range(len(nums)):
