@@ -6,15 +6,31 @@
 #         self.right = right
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        ans = []
-        
-        def dfs(node, depth):
-            if not node:
-                return
-            if depth == len(ans):
-                ans.append(node.val)
-            dfs(node.right, depth + 1)
-            dfs(node.left, depth + 1)
+        if not root:
+            return []
+        l = []
+        i = 0 
+        j = 0
+        queue = [[root,j]]
+        while queue:
+            pop_element = queue.pop()
+            # print("POP ELEMENT",pop_element)
+            # print("BEFORE QUEUE",queue)
+            if not pop_element[0] or (not pop_element[0].left and not pop_element[0].right):
+                pass
+            elif pop_element[0].left and pop_element[0].right:
+                queue.insert(0,[pop_element[0].right,pop_element[1]+1])
+                queue.insert(0,[pop_element[0].left,pop_element[1]+1])
+            elif not pop_element[0].left:
+                queue.insert(0,[pop_element[0].right,pop_element[1]+1])
+            elif not pop_element[0].right:
+                queue.insert(0,[pop_element[0].left,pop_element[1]+1])
             
-        dfs(root, 0)
-        return ans        
+            # print("AFTER ADDING",queue)
+            # print("LIST BEFORE",l)
+            if(pop_element[1]==i):
+                l.append(pop_element[0].val)
+                i+=1
+                # print("LIST AFTER",l)
+        
+        return l
