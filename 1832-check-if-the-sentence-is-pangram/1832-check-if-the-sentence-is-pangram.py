@@ -1,5 +1,7 @@
 class Solution:
     def checkIfPangram(self, s: str) -> bool:
+        if len(s)<26:
+            return False
         l = ['a','b','c',
              'd','e','f',
              'g','h','i',
