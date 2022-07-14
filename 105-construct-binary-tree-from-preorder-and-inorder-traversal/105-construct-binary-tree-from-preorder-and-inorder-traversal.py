@@ -7,8 +7,8 @@
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         if inorder:
-            root_idx = inorder.index(preorder.pop(0))
-            root = TreeNode(inorder[root_idx])
-            root.left = self.buildTree(preorder,inorder[:root_idx])
-            root.right = self.buildTree(preorder,inorder[root_idx+1:])
+            idx = inorder.index(preorder.pop(0))
+            root = TreeNode(inorder[idx])
+            root.left = self.buildTree(preorder,inorder[:idx])
+            root.right = self.buildTree(preorder,inorder[idx+1:])
             return root
