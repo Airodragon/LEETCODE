@@ -4,5 +4,4 @@ class Solution:
         for i in matrix:
             a.extend(i)
         a.sort()
-        print(a)
         return a[k-1]
