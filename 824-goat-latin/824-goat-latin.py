@@ -1,0 +1,12 @@
+class Solution:
+    def toGoatLatin(self, sentence: str) -> str:
+        s = ""
+        x = ['a','e','i','o','u']
+        temp = sentence.split(" ")
+        for i in range(0,len(temp)):
+            if temp[i][0].lower() in x:
+                s+=temp[i]+"ma"
+            else:
+                s+=temp[i][1:]+temp[i][0]+"ma"
+            s+="a"*(i+1)+" "
+        return s[:-1]
