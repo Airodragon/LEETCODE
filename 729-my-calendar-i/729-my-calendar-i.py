@@ -1,10 +1,11 @@
 class MyCalendar:
+
     def __init__(self):
         self.ans = []
 
     def book(self, start: int, end: int) -> bool:
-        for i,j in self.ans:
-            if i < end and start < j:
+        for i in self.ans:
+            if end>i[0] and start<i[1]:
                 return False
         self.ans.append([start,end])
         return True
