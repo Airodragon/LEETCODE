@@ -1,19 +1,12 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        self.pred = -float('inf')
-        def recur(node):
+        
+        def helper(node, low, high):
             if not node:
                 return True
-            if not recur(node.left):
+            if not (low < node.val < high):
                 return False
-                
-            if self.pred >= node.val:
-                return False
-            self.pred = node.val
-            
-            if not recur(node.right):
-                return False
-            
-            return True
+            return helper(node.left, low, node.val) and helper(node.right, node.val, high)
         
-        return recur(root)
+        return helper(root, -inf, inf)
+    
