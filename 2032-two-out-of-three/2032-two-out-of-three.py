@@ -4,7 +4,9 @@ class Solution:
         nums2 = list(set(nums2))
         nums3 = list(set(nums3))
         nums2.extend(nums3)
+        nums3 = []
         nums1.extend(nums2)
+        nums2 = []
         a = []
         d = Counter(nums1)
         for i in d:
