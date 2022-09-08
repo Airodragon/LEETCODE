@@ -9,6 +9,7 @@ class Solution:
         nums2 = []
         a = []
         d = Counter(nums1)
+        nums1 = []
         for i in d:
             if d[i]>=2:
                 a.append(i)
